@@ -1,0 +1,11 @@
+<?php
+include_once __DIR__ . '/../config/config.php';
+include_once __DIR__ . '/connObj.php';
+
+
+class __DB_CONNECTIONS
+{
+
+	public static function SELECT_CONNECTION($connection_required)
+	{
+		switch ($connection_required) {

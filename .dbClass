@@ -1,0 +1,21 @@
+class __DB_$DBC implements __CONNECTIONS
+{
+
+    public $conn = null;
+
+    public function __construct()
+    {
+        $this->conn = new mysqli(
+            trim(ENVS::getEnv(DB_$DBC_HOST)),
+            trim(ENVS::getEnv(DB_$DBC_USER)),
+            trim(ENVS::getEnv(DB_$DBC_PWD)),
+            trim(ENVS::getEnv(DB_$DBC)),
+            trim(ENVS::getEnv(DB_$DBC_PORT)),
+        );
+
+        if ($this->conn->connect_error)
+            die("ERROR::DB_CONNECTIONS=>" . $this->conn->connect_error);
+
+        echo 'Connection successfully';
+    }
+}
